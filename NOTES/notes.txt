@@ -1,0 +1,37 @@
+1. Create Project:
+                Projects
+                New Project
+                Name : my-selenide-project
+                Build system : Maven
+                JDK must be selected
+                Create
+2. Add Dependencies:
+                cucumber java (io.cucumber)
+                cucumber junit (io.cucumber)
+                selenide (io.cucumber)
+3. Create the following packages:
+                pages (page objects goes here)
+                runners (to run and control the test cases)
+                stepdefinitions (java codes goes here)
+4. Right click on test and create a new directory :  resources
+5. Right on resources and create a new directory : features (non java code goes here)
+6. Right click on features
+                New
+                File
+                01_navigation.feature
+                Enter
+7. Create your first test case in the 01_navigation.feauture file
+
+8. Add cucumber plugin to work with intelliJ IDE
+                Click intelliJ search icon
+                Search and click Plugins
+                Marketplace
+                Cucumber for JAVA
+                Install
+                Restart
+
+9. Create a Runner class under runners package
+10. Create step definitions GoogleStepDefinitions under stepdefinitions folder
+
+*** Configuration you've done with the setup.***
+
