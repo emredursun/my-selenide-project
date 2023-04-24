@@ -32,6 +32,9 @@
 
 9. Create a Runner class under runners package
 10. Create step definitions GoogleStepDefinitions under stepdefinitions folder
+                Add the following impart extension in order to use Selenide library
+                    import static com.codeborne.selenide.Selenide.*;
+                    import static com.codeborne.selenide.Condition.*;
 
 *** Configuration you've done with the setup.***
 
