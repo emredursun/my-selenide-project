@@ -1,5 +1,6 @@
 package stepdefinitions;
 
+import com.codeborne.selenide.Configuration;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 
@@ -36,6 +37,6 @@ public class GoogleStepDefinitions {
     }
     @Then("I hold the browser open")
     public void i_hold_the_browser_open() {
-
+        Configuration.holdBrowserOpen=true;
     }
 }
