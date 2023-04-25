@@ -6,6 +6,6 @@
       And I enter password
       And I click on submit button
       And I wait for 3 seconds
-      And I click on logout button
+      And I click on logout link
       And I wait for 3 seconds
       Then I hold the browser open

@@ -18,6 +18,5 @@ public class TestPage {
     public SelenideElement username = $(By.id("exampleInputEmail1"));
     public SelenideElement password = $(By.id("exampleInputPassword1"));
     public SelenideElement submitButton = $(By.xpath("//button[@type='submit']"));
-
-    public SelenideElement logout = $(By.partialLinkText("Logout"));
+    public SelenideElement logOutLink = $(By.partialLinkText("Logout"));
 }
