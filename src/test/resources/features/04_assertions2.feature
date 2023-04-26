@@ -2,7 +2,7 @@
   Feature: assertions2
     Scenario: TC01_search_for_tesla
       Given I navigate to "https://www.google.com"
-      Given I change google search location to English (United States) and accept the google search cookies
+      Given I get the list of Locations and click on "English (United States)" and accept the google search cookies
       When I search for "Tesla"
       Then verify page source contains "Tesla"
       Then verify the result should contain "About" keyword

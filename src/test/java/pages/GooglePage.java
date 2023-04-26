@@ -13,8 +13,8 @@ public class GooglePage {
     public SelenideElement resultSection = $(By.id("result-stats"));
     public SelenideElement changeSearchLocation = $("#vc3jof > div > div");
     public SelenideElement chooseUSA = $(By.xpath("//li[contains(text(), 'English (United States)')]"));
-
-    //    public SelenideElement acceptGoogleCookies = $("#L2AGLb > div");
-    public SelenideElement acceptGoogleCookies = $(By.xpath("//div[contains(text(), 'Accept all')][@role='none']"));
+    public ElementsCollection allLocations = $$("#tbTubd > div > li");
+    public SelenideElement acceptGoogleCookies = $("#L2AGLb > div");
+//    public SelenideElement acceptGoogleCookies = $(By.xpath("//div[contains(text(), 'Accept all')][@role='none']"));
     public ElementsCollection getAllSections = $$(By.xpath("//*[@class='g']"));
 }

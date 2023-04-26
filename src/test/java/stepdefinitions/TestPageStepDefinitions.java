@@ -2,6 +2,7 @@ package stepdefinitions;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Configuration;
+import com.codeborne.selenide.SelenideElement;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import pages.TestPage;
@@ -52,4 +53,32 @@ public class TestPageStepDefinitions {
             testPage.football.shouldBe(Condition.checked);
         }
     }
+
+    //    DROPDOWN
+    @Given("I select the year as {int}")
+    public void i_select_the_year_as(Integer int1) {
+        testPage.year.selectOptionByValue(String.valueOf(int1));//selecting by value
+    }
+    @Given("I select the months as {string}")
+    public void i_select_the_months_as(String string) {
+        testPage.month.selectOption(string);//selecting by visible text
+    }
+    @Given("I select the day as {int}")
+    public void i_select_the_day_as(Integer int1) {
+        testPage.day.selectOption(int1-1);//index starts at 0
+
+    }
+
+    @Given("I get the list of US states and click on {string}")
+    public void i_get_the_list_of_us_states_and_click_on(String string) {
+        for (SelenideElement myState : testPage.allStates){//string = Texas
+            System.out.println(myState.getText());//printing the options
+            if (myState.getText().equals(string)){
+                myState.click();
+                break;
+            }
+        }
+
+    }
+
 }

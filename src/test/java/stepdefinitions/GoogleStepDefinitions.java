@@ -1,6 +1,7 @@
 package stepdefinitions;
 
 import com.codeborne.selenide.Configuration;
+import com.codeborne.selenide.SelenideElement;
 import com.codeborne.selenide.WebDriverRunner;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
@@ -24,11 +25,16 @@ public class GoogleStepDefinitions {
         open(url); // going to the given url
         sleep(5000); // 5 sec
     }
-    @Given("I change google search location to English \\(United States) and accept the google search cookies")
-    public void i_change_google_search_location_to_english_united_states_and_accept_the_google_search_cookies() {
+    @Given("I get the list of Locations and click on {string} and accept the google search cookies")
+    public void i_get_the_list_of_locations_and_click_on_and_accept_the_google_search_cookies(String string) {
         googlePage.changeSearchLocation.click();
-        googlePage.chooseUSA.click();
-        googlePage.acceptGoogleCookies.click();
+        for (SelenideElement myLocation : googlePage.allLocations){
+            if (myLocation.getText().contains(string)){
+                myLocation.click();
+                googlePage.acceptGoogleCookies.click();
+                break;
+            }
+        }
     }
     @Given("I wait for {int} seconds")
     public void i_wait_for_seconds(Integer timeForWait) {
