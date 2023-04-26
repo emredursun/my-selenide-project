@@ -3,6 +3,7 @@ package stepdefinitions;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.SelenideElement;
+import com.codeborne.selenide.WebDriverRunner;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import pages.TestPage;
@@ -79,6 +80,35 @@ public class TestPageStepDefinitions {
             }
         }
 
+    }
+    //  ALERTS
+    @Given("I click on alert prompt")
+    public void i_click_on_alert_prompt() {
+        testPage.jsPromptButton.click();
+    }
+    @Given("I enter {string} and click OK")
+    public void i_enter_and_click_ok(String string) {
+        WebDriverRunner.getWebDriver().switchTo().alert().sendKeys(string);//entering text
+        WebDriverRunner.getWebDriver().switchTo().alert().accept();//OK
+    }
+    @Then("I verify the result contains {string}")
+    public void i_verify_the_result_contains(String string) {
+        testPage.result.shouldHave(Condition.text(string));
+    }
+
+    @Given("I verify the page header contains {string}")
+    public void i_verify_the_page_header_contains(String string) {
+    //  IS OUTSIDE OF IFRAME
+        testPage.pageHader.shouldHave(Condition.text(string));
+    }
+    @Given("I switch to the frame {int}")
+    public void i_switch_to_the_frame(Integer int1) {
+        WebDriverRunner.getWebDriver().switchTo().frame(int1-1);//1-1 = 0 which is the first frame
+    }
+    @Given("I click on Back to TechProEducation.com")
+    public void i_click_on_back_to_tech_pro_education_com() {
+    //  INSIDE THE IFRAME
+        testPage.backToTechpro.click();
     }
 
 }
