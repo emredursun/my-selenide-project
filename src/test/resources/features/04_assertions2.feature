@@ -7,7 +7,7 @@
       Then verify page source contains "Tesla"
       Then verify the result should contain "About" keyword
       Then the first result in the page sections should contain "Tesla"
-#      Then I hold the browser open
+      Then I hold the browser open
 
 #     Created test case in feature folder -DONE
 #     Create page objects in the page folder -DONE
