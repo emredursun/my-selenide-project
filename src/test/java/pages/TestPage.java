@@ -55,5 +55,5 @@ public class TestPage {
     public SelenideElement helloWorld =$(By.xpath("//div[@id='finish']//h4"));
 
     //    SCREENSHOT
-    public SelenideElement upcomingPrograms = $(By.id("MjI4NDoxMDk1-1"));
+    public SelenideElement upcomingPrograms = $(By.xpath("//img[@id='MjI0Mjo4Njk=-1']"));
 }
