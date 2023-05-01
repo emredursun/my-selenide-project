@@ -210,4 +210,19 @@ public class TestPageStepDefinitions {
     public void iVerifyTheFileIsUploaded() {
         testPage.statusOfUploadedFile.shouldHave(Condition.text("File Uploaded!"));
     }
+
+    @And("I scroll down to footer section")
+    public void iScrollDownToFooterSection() {
+        executeJavaScript("arguments[0].scrollIntoView(true);", testPage.amazonFooterSection);
+    }
+
+    @And("I click on {string} by JS on Amazon table")
+    public void iClickOnByJSOnAmazonTable(String linkText) {
+        SelenideElement amazonFooterSectionWebElement = $(By.xpath("//table[@class='navFooterMoreOnAmazon']//*[contains(text(),'"+ linkText +"')]"));
+//        amazonFooterSectionWebElement.click();
+        executeJavaScript("arguments[0].click();", amazonFooterSectionWebElement);
+
+        // ALTERNATIVELY LOCATING THE ELEMENT WITH JS
+//        executeJavaScript("document.getElementById('nav-logo-sprites').click();");
+    }
 }

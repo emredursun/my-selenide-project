@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extentreports>
+    <!-- Report Configuration -->
+    <configuration>
+        <!-- Report Theme -->
+        <theme>standard</theme>
+        <!-- Document Encoding -->
+        <encoding>UTF-8</encoding>
+        <!-- Protocol for Script and Stylesheets -->
+        <protocol>http</protocol>
+        <!-- Document Title -->
+        <documentTitle>Selenide Test Report</documentTitle>
+        <!-- Report Name -->
+        <reportName>Selenide Test Report</reportName>
+        <!-- Custom CSS -->
+        <headContent><![CDATA[<style>body{font-family:Tahoma,Arial,sans-serif;font-size:16px;}</style>]]></headContent>
+    </configuration>
+</extentreports>

@@ -62,4 +62,6 @@ public class TestPage {
     public SelenideElement uploadFileButton = $(By.id("file-submit"));
     public SelenideElement statusOfUploadedFile = $(By.xpath("//h3"));
 
+    // Amazon web page footer section
+    public SelenideElement amazonFooterSection = $(By.xpath("//table[@class='navFooterMoreOnAmazon']"));
 }

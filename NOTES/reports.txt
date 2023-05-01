@@ -1,0 +1,10 @@
+* Cucumber is famous for its reports
+* We can use plug ins in the Runner class to qenerate html, json, xml reports
+* We can also publish the reports in the cloud using cucumber.properties file
+* Make sure to login with your GitHub and use collection tokens in the cucumber.properties file to keep your reports forever
+* In addition to this cucumber reports, we cna use Extent Reports or Spark Reports with cucumber.
+
+* We need to follow a few steps to add Smart Reports capabilities in Selenide Framework
+1. Add new plugin in the Runner Class => com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"
+2. Add dependency => tech.grasshopper
+3. Add extent-config and extent.properties UNDER RESOURCES

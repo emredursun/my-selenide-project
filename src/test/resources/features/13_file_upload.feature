@@ -6,5 +6,5 @@ Feature: file uploads
     And I try to upload the file on this path "/Downloads/logo.png"
     And I wait for 3 seconds
     Then I verify the file is uploaded
-    And I capture the screenshot of the page
-    And I hold the browser open
+#    And I capture the screenshot of the page
+#    And I hold the browser open
