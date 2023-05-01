@@ -190,24 +190,24 @@ public class TestPageStepDefinitions {
 //        testPage.helloWorld.should(visible,Duration.ofSeconds(20)); //OR
         testPage.helloWorld.should(Condition.visible,Duration.ofSeconds(20));
         Assert.assertEquals("Hello World!",testPage.helloWorld.getText());
-        testPage.helloWorld.should(Condition.text("fake test"));//FAIL to test not taking screenshot
+        testPage.helloWorld.should(Condition.text("Hello World!"));//FAIL to test not taking screenshot
     }
 
     @And("I try to upload the file on this path {string}")
-    public void iTryToUploadTheFileOnThisPath(String arg0) {
+    public void iTryToUploadTheFileOnThisPath(String filePath) {
 //        Getting the file path
-//                    USER DIRECTORY               + FILE PATH = FULL PATH
-        String path = System.getProperty("user.home")+arg0;
+//                    USER DIRECTORY                  + FILE PATH = FULL PATH
+        String path = System.getProperty("user.home") + filePath;
         System.out.println(path);
         File fullPath = new File(path);
 //        Selecting the file
-        $(By.id("file-upload")).uploadFile(fullPath);
-//        click upload button
-        $(By.id("file-submit")).click();
+        testPage.chooseFileButton.uploadFile(fullPath);
+//        click upload file button
+        testPage.uploadFileButton.click();
     }
 
     @Then("I verify the file is uploaded")
     public void iVerifyTheFileIsUploaded() {
-        $(By.xpath("//h3")).shouldHave(Condition.text("File Uploaded!"));
+        testPage.statusOfUploadedFile.shouldHave(Condition.text("File Uploaded!"));
     }
 }

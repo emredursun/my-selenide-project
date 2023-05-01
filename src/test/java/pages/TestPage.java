@@ -56,4 +56,10 @@ public class TestPage {
 
     //    SCREENSHOT
     public SelenideElement upcomingPrograms = $(By.xpath("//img[@id='MjI0Mjo4Njk=-1']"));
+
+    // FILE UPLOAD
+    public SelenideElement chooseFileButton = $(By.id("file-upload"));
+    public SelenideElement uploadFileButton = $(By.id("file-submit"));
+    public SelenideElement statusOfUploadedFile = $(By.xpath("//h3"));
+
 }
